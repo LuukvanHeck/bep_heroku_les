@@ -2,7 +2,7 @@ export class KoffieService {
     MAX_KOFFIE_STERKTE = 10;
 
     getKoffieSoorten() {
-        return fetch('http://localhost:8080/restservices/koffie')
+        return fetch('https://bep2022les.herokuapp.com/')
             .then(r => {
                 if(r.status === 200){
                     return r.json();
@@ -15,7 +15,7 @@ export class KoffieService {
     }
 
     voegKoffieToe(koffie){
-        return fetch('http://localhost:8080/restservices/koffie', {
+        return fetch('https://bep2022les.herokuapp.com/', {
             method: 'POST',
             body: JSON.stringify(koffie),
             headers: {
